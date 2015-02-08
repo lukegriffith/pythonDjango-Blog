@@ -8,4 +8,3 @@ urlpatterns = patterns('',
 	url(r'^(?P<number>\d+)/$', views.testing, name='testing'),
 	url(r'^posts$', views.RecentPosts, name='RecentPosts')
 )
-

@@ -1,0 +1,12 @@
+{% if posts %}
+    <ul>
+    {% for x in posts %}
+    	<h1><a>Title: {{ x.Title }}</a></h1>
+    	<a>{{ x.TimeStamp }}</a>
+    	<br>
+        <a>{{ x.BodyText }}</a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}

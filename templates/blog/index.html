@@ -1,12 +1,91 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+<style>
+
+h1 {
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	font-weight: bolder;
+
+}
+
+
+h2 {
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+p {
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: lighter;
+
+}
+
+.post {
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+	margin-right: 2px
+
+}
+
+.posts {
+	margin-left: 200px;
+
+}
+
+.static {
+
+	float: left;
+	width: 200px;
+
+}
+
+.container {
+position: absolute;
+vertical-align: center;
+}
+
+
+</style>
+</head>
+
+
+<div class="container">
+
+
+	<div class="static">
+	<h1> lukegriffith.co.uk </h1>
+	<h2>Welcome to my Django powered site.</h2>
+	<p>I'm still getting stuff ready here, soon this place will be dope</p>
+	</div>
 {% if posts %}
-    <ul>
-    {% for x in posts %}
-    	<h1><a>Title: {{ x.Title }}</a></h1>
-    	<a>{{ x.TimeStamp }}</a>
-    	<br>
-        <a>{{ x.BodyText }}</a>
-    {% endfor %}
-    </ul>
+	<div class="posts">
+
+	    <ul>
+	    {% for x in posts %}
+
+	    	<div class ="post">
+
+	    	<h1><a>{{ x.Title }}</a></h1>
+	    	<h2>{{ x.TimeStamp }}</h2>
+	        <p>{{ x.BodyText }}</p>
+
+	        </div>
+
+	    {% endfor %}
+	    </ul>
+
+    </div>
 {% else %}
     <p>No posts are available.</p>
 {% endif %}
+
+
+
+</div>

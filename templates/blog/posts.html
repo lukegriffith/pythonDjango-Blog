@@ -1,3 +1,64 @@
-<h1>{{ posts.Title }}</h1><br>
-<h2>{{ posts.TimeStamp }}</h2><br>
-<a>{{ posts.BodyText }}</a>
+
+
+
+
+<head>
+{% load staticfiles %}
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+<link href="{% static 'blog/style.css' %}" rel="stylesheet" type="text/css">
+
+<title>{{ about.siteName}} - {{ post.Title }}</title>
+</head>
+</head>
+
+
+<div class="container">
+
+
+	<div class="about">
+	<h1><a href="{% url 'index'  %}">{{ about.siteName }}</h1></a>
+	<h2>{{ about.subtitle }}</h2>
+	<p>{{ about.Text }}</p>
+	</div>
+
+	<div class="categories">
+
+	{% if categories %}
+		
+		{% for x in categories %}
+			<p class="category">Categories</p>
+			<p class="category"><a href="{% url 'CategoryView' x.id %}"> {{ x.category }}</a><p>
+		{% endfor %}
+	
+	{% else %}
+		<li>no categories found</li>
+	{% endif %}
+	</div>
+
+
+{% if posts %}
+	<div class="posts">
+
+	    <ul>
+	   
+
+	    	<div class ="post">
+
+				<h1><a href="{% url 'Posts' posts.id %}">{{ posts.Title }}</a></h1>
+				<h2>{{ posts.TimeStamp }}</h2>
+				<p>{{ posts.BodyText }}</p>
+
+	        </div>
+
+	 
+	    </ul>
+
+    </div>
+{% else %}
+    <h1>No posts are available.</h1>
+{% endif %}
+
+
+
+</div>

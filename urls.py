@@ -1,10 +1,10 @@
 
 from django.conf.urls import patterns, url
 
-from blog import views
+from blogsite import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
-	# url(r'^(?P<number>\d+)/$', views.testing, name='testing'),
-	url(r'^(?P<entry_id>\d+)/$', views.Posts, name='Posts')
+	url(r'^(?P<entry_id>\d+)/$', views.Posts, name='Posts'),
+	url(r'^(?P<categoryChoice>\d+)/Category/$', views.Categories, name='CategoryView')
 )

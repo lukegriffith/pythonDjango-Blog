@@ -35,14 +35,16 @@
 {% if posts %}
 	<div class="posts">
 
+		<ul><h1>Category: {{ categoryTitle.category }}</h1><ul>
+	    
 	    <ul>
 	    {% for x in posts %}
 
 	    	<div class ="post">
-
-	    	<h1><a href="{% url 'Posts' x.id %}">{{ x.Title }}</a></h1>
-	    	<h2>{{ x.TimeStamp }}</h2>
-	        <p>{{ x.BodyText }}</p>
+			
+				<h1><a href="{% url 'Posts' x.id %}">{{ x.Title }}</a></h1>
+		    	<h2>{{ x.TimeStamp }}</h2>
+		        <p>{{ x.BodyText }}</p>
 
 	        </div>
 
